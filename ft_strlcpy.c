@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: flmuller <florian.mul@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/18 16:01:30 by flmuller          #+#    #+#             */
-/*   Updated: 2023/08/18 20:37:38 by flmuller         ###   ########.fr       */
+/*   Created: 2023/08/20 23:10:36 by flmuller          #+#    #+#             */
+/*   Updated: 2023/08/20 23:25:29 by flmuller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalpha(int c)
+size_t ft_strlcpy(char *  dest , const char *  src , size_t  size )
 {
-	return ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'));
+	
 }
