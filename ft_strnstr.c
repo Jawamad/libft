@@ -1,23 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: flmuller <flmuller@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/20 22:06:41 by flmuller          #+#    #+#             */
-/*   Updated: 2023/10/04 10:27:59 by flmuller         ###   ########.fr       */
+/*   Created: 2023/10/04 10:31:20 by flmuller          #+#    #+#             */
+/*   Updated: 2023/10/04 15:25:36 by flmuller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *pointer, int value, size_t count)
+char	* strnstr(const char * big, const char * little, size_t len)
 {
-	unsigned char	*init;
+	int	i;
+	int	k;
 
-	init = (unsigned char *) pointer;
-	while (count-- > 0)
-		*init++ = (unsigned char) value;
-	return (init);
+	i = 0;
+	if (little[i])
+	{
+		while (big[i + k] && i + k < len)
+		{
+			if (big[i + k] == little[k])
+				k++;
+			else if( !little[k])
+				return (big + i);
+			else
+			{
+				i++;
+				k = 0;
+			}
+		}
+		if(!little[k])
+			return (big + i);
+		return (NULL);
+	}
+	return (big);
 }

@@ -6,7 +6,7 @@
 /*   By: flmuller <flmuller@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/20 22:38:57 by flmuller          #+#    #+#             */
-/*   Updated: 2023/10/03 15:22:54 by flmuller         ###   ########.fr       */
+/*   Updated: 2023/10/04 12:58:05 by flmuller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,17 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 		return (0);
 	while (i < n)
 	{
-		((char *) dest)[i] = ((char *) src)[i];
+		((unsigned char *) dest)[i] = ((unsigned char *) src)[i];
 		i++;
 	}
 	return (dest);
+}
+#include <stdio.h>
+int	main()
+{
+	char	d[6] = "123456";
+	char	s[6] = "abcdef";
+
+	ft_memcpy(d, s, 6);
+	printf("%s\n", d);
 }
