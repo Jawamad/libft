@@ -6,9 +6,11 @@
 /*   By: flmuller <flmuller@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 11:42:27 by flmuller          #+#    #+#             */
-/*   Updated: 2023/10/06 11:50:55 by flmuller         ###   ########.fr       */
+/*   Updated: 2023/10/06 13:04:42 by flmuller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 char *ft_strdup(const char *s)
 {
@@ -22,7 +24,7 @@ char *ft_strdup(const char *s)
 	while (s[i])
 	{
 		res[i] = s[i];
-		i++
+		i++;
 	}
 	res[i] = "\0";
 	return (res);

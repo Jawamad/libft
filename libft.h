@@ -6,7 +6,7 @@
 /*   By: flmuller <flmuller@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/18 16:02:21 by flmuller          #+#    #+#             */
-/*   Updated: 2023/10/06 11:28:28 by flmuller         ###   ########.fr       */
+/*   Updated: 2023/10/06 19:06:45 by flmuller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 # define LIBFT_H
 
 # include <stdlib.h>
+
+size_t	strlcat(char *dst, const char *src, size_t size);
 
 size_t	ft_strlcpy(char *  dest , const char *  src , size_t  size );
 
@@ -28,6 +30,8 @@ void	ft_bzero(void *s, size_t n);
 char 	*ft_strchr(const char *s, int c);
 
 char	*ft_strrchr(const char *s, int c);
+
+char	*ft_strdup(const char *s);
 
 int				ft_isalnum(int c);
 

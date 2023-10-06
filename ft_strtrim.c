@@ -1,29 +1,51 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft _strtrim.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: flmuller <flmuller@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/04 14:42:47 by flmuller          #+#    #+#             */
-/*   Updated: 2023/10/06 17:33:29 by flmuller         ###   ########.fr       */
+/*   Created: 2023/10/06 17:34:36 by flmuller          #+#    #+#             */
+/*   Updated: 2023/10/06 19:22:50 by flmuller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-size_t	strlcat(char *dst, const char *src, size_t size)
+static int ft_isinset(char c, char const *set)
 {
 	int i;
-	int k;
-	
-	i = ft_strlen(dst);
-	k = 0;
-	while (src[k] && i + k < size)
+
+	i = 0;
+	while (set[i])
 	{
-		dst[i + k] = src[k];
-		k++;
+		if (c == set[i])
+			return (1);
+		i++;
 	}
-	dst[i + k] = "\0";
-	return (i + ft_strlen(src));
+	return (0);
+}
+
+char *ft_strtrim(char const *s1, char const *set)
+{
+	int i;
+	int j;
+	int k;
+	char	*str;
+
+	i = 0;
+	j = ft_strlen(s1) - 1;
+	while (ft_isinset(s1[i], set))
+		i++;
+	while (!ft_isinset(s1[j], set))
+		j--;
+	str = malloc(sizeof(char) * (j - i + 1));
+	if (!str)
+		return (NULL);
+	k = 0;
+	while (i <= j)
+	{
+		str[k] = s1[i];
+		i++;
+	}
+	return (str);
 }
