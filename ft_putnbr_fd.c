@@ -1,29 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: flmuller <flmuller@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/04 14:42:47 by flmuller          #+#    #+#             */
-/*   Updated: 2023/10/08 19:20:49 by flmuller         ###   ########.fr       */
+/*   Created: 2023/10/08 18:02:52 by flmuller          #+#    #+#             */
+/*   Updated: 2023/10/08 19:24:52 by flmuller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	strlcat(char *dst, const char *src, size_t size)
+void	ft_putnbr_fd(int n, int fd)
 {
-	int	i;
-	int	k;
+	long int	number;
 
-	i = ft_strlen(dst);
-	k = 0;
-	while (src[k] && i + k < size)
+	if (n < 0)
 	{
-		dst[i + k] = src[k];
-		k++;
+		number = -n;
+		ft_putchar_fd('-', fd);
 	}
-	dst[i + k] = "\0";
-	return (i + ft_strlen(src));
+	if (number > 9)
+		ft_putnbr_fd(number / 10, fd);
+	ft_putchar_fd(number % 10 + '0', fd);
 }

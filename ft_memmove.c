@@ -6,7 +6,7 @@
 /*   By: flmuller <flmuller@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/20 22:52:13 by flmuller          #+#    #+#             */
-/*   Updated: 2023/10/04 11:58:40 by flmuller         ###   ########.fr       */
+/*   Updated: 2023/10/08 19:05:18 by flmuller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,15 +34,4 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 			*d-- = *s--;
 	}
 	return (dest);
-}
-
-#include <stdio.h>
-#include <string.h>
-
-int main()
-{
-	char test[5] = "abcde";
-	char test2[1]= "";
-	ft_memmove(test2, test, 3);
-	printf("%s", test2);
 }

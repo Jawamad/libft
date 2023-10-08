@@ -6,19 +6,20 @@
 /*   By: flmuller <flmuller@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 15:59:24 by flmuller          #+#    #+#             */
-/*   Updated: 2023/10/06 16:16:16 by flmuller         ###   ########.fr       */
+/*   Updated: 2023/10/08 19:11:43 by flmuller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	int	i;
+	int		i;
 	char	*str;
+
 	i = 0;
 	while (s[start + i] && i < len)
-		 i++;
+		i++;
 	str = malloc(sizeof(char) * i + 1);
 	if (!str)
 		return (NULL);

@@ -6,13 +6,13 @@
 /*   By: flmuller <flmuller@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 10:31:20 by flmuller          #+#    #+#             */
-/*   Updated: 2023/10/06 11:28:35 by flmuller         ###   ########.fr       */
+/*   Updated: 2023/10/08 18:48:35 by flmuller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	* strnstr(const char * big, const char * little, size_t len)
+char	*strnstr(const char *big, const char *little, size_t len)
 {
 	int	i;
 	int	k;
@@ -24,7 +24,7 @@ char	* strnstr(const char * big, const char * little, size_t len)
 		{
 			if (big[i + k] == little[k])
 				k++;
-			else if( !little[k])
+			else if (!little[k])
 				return (big + i);
 			else
 			{
@@ -32,7 +32,7 @@ char	* strnstr(const char * big, const char * little, size_t len)
 				k = 0;
 			}
 		}
-		if(!little[k])
+		if (!little[k])
 			return (big + i);
 		return (NULL);
 	}

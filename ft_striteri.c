@@ -1,52 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: flmuller <flmuller@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/06 17:34:36 by flmuller          #+#    #+#             */
-/*   Updated: 2023/10/08 19:08:38 by flmuller         ###   ########.fr       */
+/*   Created: 2023/10/08 17:36:40 by flmuller          #+#    #+#             */
+/*   Updated: 2023/10/08 19:19:11 by flmuller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_isinset(char c, char const *set)
+void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
 	int	i;
 
-	i = 0;
-	while (set[i])
-	{
-		if (c == set[i])
-			return (1);
-		i++;
-	}
-	return (0);
-}
-
-char	*ft_strtrim(char const *s1, char const *set)
-{
-	int		i;
-	int		j;
-	int		k;
-	char	*str;
-
-	i = 0;
-	j = ft_strlen(s1) - 1;
-	while (ft_isinset(s1[i], set))
-		i++;
-	while (!ft_isinset(s1[j], set))
-		j--;
-	str = malloc(sizeof(char) * (j - i + 1));
-	if (!str)
+	if (s == NULL || f == NULL)
 		return (NULL);
-	k = 0;
-	while (i <= j)
+	i = 0;
+	while (s[i])
 	{
-		str[k] = s1[i];
+		(*f)(i, s[i]);
 		i++;
 	}
-	return (str);
 }
