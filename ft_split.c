@@ -6,7 +6,7 @@
 /*   By: flmuller <flmuller@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 18:27:47 by flmuller          #+#    #+#             */
-/*   Updated: 2023/10/08 18:58:17 by flmuller         ###   ########.fr       */
+/*   Updated: 2023/10/09 13:48:14 by flmuller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ static int	ft_countword(char const *s, char c)
 	return (count);
 }
 
-static char	*ft_strldup(char *s, int len)
+static char	*ft_strldup(const char *s, int len)
 {
 	int		i;
 	char	*res;
@@ -45,7 +45,7 @@ static char	*ft_strldup(char *s, int len)
 		res[i] = s[i];
 		i++;
 	}
-	res[i] = "\0";
+	res[i] = '\0';
 	return (res);
 }
 

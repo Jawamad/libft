@@ -6,7 +6,7 @@
 /*   By: flmuller <flmuller@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 17:34:36 by flmuller          #+#    #+#             */
-/*   Updated: 2023/10/08 19:08:38 by flmuller         ###   ########.fr       */
+/*   Updated: 2023/10/09 11:44:22 by flmuller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	char	*str;
 
 	i = 0;
-	j = ft_strlen(s1) - 1;
+	j = ft_strlen((char *)s1) - 1;
 	while (ft_isinset(s1[i], set))
 		i++;
 	while (!ft_isinset(s1[j], set))

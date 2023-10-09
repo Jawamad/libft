@@ -6,7 +6,7 @@
 /*   By: flmuller <flmuller@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 17:46:44 by flmuller          #+#    #+#             */
-/*   Updated: 2023/10/08 18:53:22 by flmuller         ###   ########.fr       */
+/*   Updated: 2023/10/09 13:55:48 by flmuller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_putstr_fd(char *s, int fd)
 {
 	while (s)
 	{
-		ft_putchar_fd(s, fd);
-		*s++;
+		ft_putchar_fd(*s, fd);
+		s++;
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: flmuller <flmuller@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 16:47:03 by flmuller          #+#    #+#             */
-/*   Updated: 2023/10/08 18:46:54 by flmuller         ###   ########.fr       */
+/*   Updated: 2023/10/09 12:05:04 by flmuller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 
 	if (s == NULL || f == NULL)
 		return (NULL);
-	res = malloc(sizeof(char) * (ft_strlen(s) + 1));
+	res = malloc(sizeof(char) * (ft_strlen((char *) s) + 1));
 	if (!res)
 		return (NULL);
 	i = 0;

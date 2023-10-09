@@ -6,7 +6,7 @@
 /*   By: flmuller <flmuller@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 17:57:00 by flmuller          #+#    #+#             */
-/*   Updated: 2023/10/08 19:20:11 by flmuller         ###   ########.fr       */
+/*   Updated: 2023/10/09 12:07:28 by flmuller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,5 @@
 void	ft_putendl_fd(char *s, int fd)
 {
 	ft_putstr_fd(s, fd);
-	ft_putchar_fd("\n", fd);
+	ft_putchar_fd('\n', fd);
 }

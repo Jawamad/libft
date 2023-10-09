@@ -6,7 +6,7 @@
 /*   By: flmuller <flmuller@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 11:42:27 by flmuller          #+#    #+#             */
-/*   Updated: 2023/10/08 19:20:42 by flmuller         ###   ########.fr       */
+/*   Updated: 2023/10/09 13:45:03 by flmuller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strdup(const char *s)
 	char	*res;
 
 	i = 0;
-	res = malloc(ft_strlen(s) + 1);
+	res = malloc(ft_strlen((char *)s) + 1);
 	if (!res)
 		return (NULL);
 	while (s[i])
@@ -26,6 +26,6 @@ char	*ft_strdup(const char *s)
 		res[i] = s[i];
 		i++;
 	}
-	res[i] = "\0";
+	res[i] = '\0';
 	return (res);
 }

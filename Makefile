@@ -1,21 +1,22 @@
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
-EXEC = libft.a
-SRC = $(willcard *.c)
+NAME = libft.a
+SRC = $(wildcard *.c)
 OBJ = $(SRC:.c=.o)
+AR = ar rc
 
-all : $(EXEC)
+all : $(NAME)
 
 %.o : %.c
-	$(CC) $(CFLAGS) -o $@ -c $<
+	$(CC) $(CFLAGS) -c $< -o $@
 
-$(EXEC): $(OBJ)
-	$(CC) -o $@ $^ 
+$(NAME): $(OBJ)
+	$(AR) -o $@ $^
 
 clean : 
 	rm -rf *.o
 
 fclean : clean
-	rm -rf $(EXEC)
+	rm -rf $(NAME)
 
 re : fclean all

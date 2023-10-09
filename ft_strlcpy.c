@@ -6,7 +6,7 @@
 /*   By: flmuller <flmuller@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/20 23:10:36 by flmuller          #+#    #+#             */
-/*   Updated: 2023/10/08 18:47:35 by flmuller         ###   ########.fr       */
+/*   Updated: 2023/10/09 12:03:21 by flmuller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,15 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t size )
 
 	i = 0;
 	if (dest == NULL || src == NULL)
-		return (NULL);
+		return (0);
 	if (size > 0)
 	{
-		while (src[i] && i < size)
+		while (src[i] && i < (int)size)
 		{
 			dest[i] = src[i];
 			i++;
 		}
-		dest[i] = "\0";
+		dest[i] = '\0';
 	}
-	return (ft_strlen(src));
+	return (ft_strlen((char *) src));
 }
