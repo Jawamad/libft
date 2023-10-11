@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: flmuller <florian.mul@gmail.com>           +#+  +:+       +#+        */
+/*   By: flmuller <flmuller@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/18 16:02:16 by flmuller          #+#    #+#             */
-/*   Updated: 2023/08/18 20:36:23 by flmuller         ###   ########.fr       */
+/*   Updated: 2023/10/11 14:06:31 by flmuller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 int	ft_isascii(int c)
 {
-	return (c <= 126);
+	return (c >= 0 && c <= 127);
 }

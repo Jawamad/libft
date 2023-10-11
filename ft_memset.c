@@ -6,18 +6,23 @@
 /*   By: flmuller <flmuller@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/20 22:06:41 by flmuller          #+#    #+#             */
-/*   Updated: 2023/10/04 10:27:59 by flmuller         ###   ########.fr       */
+/*   Updated: 2023/10/11 14:11:33 by flmuller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *pointer, int value, size_t count)
+void	*ft_memset(void *s, int c, size_t n)
 {
-	unsigned char	*init;
+	char	*ptr;
+	int		i;
 
-	init = (unsigned char *) pointer;
-	while (count-- > 0)
-		*init++ = (unsigned char) value;
-	return (init);
+	i = 0;
+	ptr = (char *) s;
+	while (i < (int)n)
+	{
+		ptr[i] = c;
+		i++;
+	}
+	return (s);
 }

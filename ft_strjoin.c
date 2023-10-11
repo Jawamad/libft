@@ -6,7 +6,7 @@
 /*   By: flmuller <flmuller@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 16:16:21 by flmuller          #+#    #+#             */
-/*   Updated: 2023/10/09 13:52:48 by flmuller         ###   ########.fr       */
+/*   Updated: 2023/10/11 18:32:26 by flmuller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 	str1 = (char *)s1;
 	str2 = (char *)s2;
-	size = ft_strlen(str1) + ft_strlen(str2)+1;
+	size = ft_strlen(str1) + ft_strlen(str2) + 1;
 	newstr = malloc(sizeof(char) * size);
 	if (!newstr)
 		return (NULL);

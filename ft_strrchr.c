@@ -6,7 +6,7 @@
 /*   By: flmuller <flmuller@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 13:40:02 by flmuller          #+#    #+#             */
-/*   Updated: 2023/10/08 18:49:51 by flmuller         ###   ########.fr       */
+/*   Updated: 2023/10/10 14:05:34 by flmuller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ char	*ft_strrchr(const char *s, int c)
 	{
 		if (str[i] == c)
 			return (&str[i]);
+		i--;
 	}
 	return (NULL);
 }

@@ -6,7 +6,7 @@
 /*   By: flmuller <flmuller@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 15:40:38 by flmuller          #+#    #+#             */
-/*   Updated: 2023/10/09 13:45:43 by flmuller         ###   ########.fr       */
+/*   Updated: 2023/10/11 17:56:51 by flmuller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,13 @@ static int	ft_countunit(long int n)
 {
 	int	count;
 
-	while (n > 0)
+	count = 0;
+	while (n > 9)
 	{
 		count++;
 		n = n / 10;
 	}
+	count++;
 	return (count);
 }
 
@@ -28,24 +30,25 @@ char	*ft_itoa(int n)
 {
 	long int	number;
 	int			unit;
-	int			sign;
 	char		*res;
 
-	sign = 1;
+	number = n;
 	if (n < 0)
-		sign = -1;
-	number = n * sign;
+		number = number * -1;
 	unit = ft_countunit(number);
-	if (sign < 0)
+	if (n < 0)
 		unit++;
 	res = malloc(sizeof(char) * (unit + 1));
-	res[unit + 1] = '\0';
-	while (number > 0)
+	if(!res)
+		return (NULL);
+	res[unit--] = '\0';
+	while (number > 9)
 	{
-		res[unit--] = number % 10 + '0';
+		res[unit--] = (number % 10) + '0';
 		number = number / 10;
 	}
-	if (sign < 0)
+	res[unit--] = number + '0';
+	if (n < 0)
 		res[unit] = '-';
 	return (res);
 }

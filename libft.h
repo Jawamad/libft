@@ -6,7 +6,7 @@
 /*   By: flmuller <flmuller@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/18 16:02:21 by flmuller          #+#    #+#             */
-/*   Updated: 2023/10/09 16:36:17 by flmuller         ###   ########.fr       */
+/*   Updated: 2023/10/11 16:41:46 by flmuller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@
 size_t	ft_strlcat(char *dst, const char *src, size_t size);
 
 size_t	ft_strlcpy(char *dest, const char *src, size_t size);
+
+size_t	ft_strlen(char *str);
 
 void	*ft_memset(void *pointer, int value, size_t count);
 
@@ -54,7 +56,7 @@ char	*ft_itoa(int n);
 
 char	*ft_strjoin(char const *s1, char const *s2);
 
-char	*strnstr(const char *big, const char *little, size_t len);
+char	*ft_strnstr(const char *big, const char *little, size_t len);
 
 char	*ft_strtrim(char const *s1, char const *set);
 
@@ -73,8 +75,6 @@ int		ft_isascii(int c);
 int		ft_isalpha(int c);
 
 int		ft_isprint(int c);
-
-int		ft_strlen(char *str);
 
 int		ft_toupper(int c);
 
