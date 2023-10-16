@@ -6,7 +6,7 @@
 /*   By: flmuller <flmuller@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 17:34:36 by flmuller          #+#    #+#             */
-/*   Updated: 2023/10/09 11:44:22 by flmuller         ###   ########.fr       */
+/*   Updated: 2023/10/12 14:25:02 by flmuller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,18 +28,20 @@ static int	ft_isinset(char c, char const *set)
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	int		i;
-	int		j;
-	int		k;
-	char	*str;
+	unsigned int		i;
+	unsigned int		j;
+	unsigned int		k;
+	char				*str;
 
 	i = 0;
 	j = ft_strlen((char *)s1) - 1;
 	while (ft_isinset(s1[i], set))
 		i++;
-	while (!ft_isinset(s1[j], set))
+	if (i == ft_strlen((char *)s1))
+		return (ft_strdup(""));
+	while (ft_isinset(s1[j], set))
 		j--;
-	str = malloc(sizeof(char) * (j - i + 1));
+	str = malloc(sizeof(char) * (j - i + 2));
 	if (!str)
 		return (NULL);
 	k = 0;
@@ -47,6 +49,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	{
 		str[k] = s1[i];
 		i++;
+		k++;
 	}
+	str[k] = '\0';
 	return (str);
 }

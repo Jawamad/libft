@@ -6,7 +6,7 @@
 /*   By: flmuller <flmuller@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 10:31:20 by flmuller          #+#    #+#             */
-/*   Updated: 2023/10/11 16:41:30 by flmuller         ###   ########.fr       */
+/*   Updated: 2023/10/12 15:06:58 by flmuller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	int	i;
-	int	k;
+	unsigned int	i;
+	unsigned int	k;
 
 	i = 0;
 	k = 0;
 	if (little[i])
 	{
-		while (big[i + k] && i + k < (int)len)
+		while (big[i + k] && i + k < len)
 		{
 			if (big[i + k] == little[k])
 				k++;

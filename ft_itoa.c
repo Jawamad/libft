@@ -6,7 +6,7 @@
 /*   By: flmuller <flmuller@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 15:40:38 by flmuller          #+#    #+#             */
-/*   Updated: 2023/10/11 17:56:51 by flmuller         ###   ########.fr       */
+/*   Updated: 2023/10/12 11:40:24 by flmuller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ char	*ft_itoa(int n)
 	if (n < 0)
 		unit++;
 	res = malloc(sizeof(char) * (unit + 1));
-	if(!res)
+	if (!res)
 		return (NULL);
 	res[unit--] = '\0';
 	while (number > 9)

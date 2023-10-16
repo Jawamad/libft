@@ -6,7 +6,7 @@
 /*   By: flmuller <flmuller@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 09:42:34 by flmuller          #+#    #+#             */
-/*   Updated: 2023/10/11 16:02:34 by flmuller         ###   ########.fr       */
+/*   Updated: 2023/10/12 14:57:24 by flmuller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	i = 0;
 	while (i < n)
 	{
-		if (b[i] == c)
+		if (b[i] == (char)c)
 			return (b + i);
 		i++;
 	}

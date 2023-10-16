@@ -6,7 +6,7 @@
 /*   By: flmuller <flmuller@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/20 23:10:36 by flmuller          #+#    #+#             */
-/*   Updated: 2023/10/11 15:00:47 by flmuller         ###   ########.fr       */
+/*   Updated: 2023/10/12 14:32:01 by flmuller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 size_t	ft_strlcpy(char *dest, const char *src, size_t size )
 {
-	int	i;
+	unsigned int	i;
 
 	i = 0;
 	if (size > 0)
 	{
-		while (src[i] && i < (int)size - 1)
+		while (src[i] && i < size - 1)
 		{
 			dest[i] = src[i];
 			i++;

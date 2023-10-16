@@ -6,7 +6,7 @@
 /*   By: flmuller <flmuller@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 15:59:24 by flmuller          #+#    #+#             */
-/*   Updated: 2023/10/11 18:24:56 by flmuller         ###   ########.fr       */
+/*   Updated: 2023/10/12 13:02:56 by flmuller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,22 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	int		i;
-	char	*str;
+	unsigned int		i;
+	char				*str;
 
-	i = 0;
-	if(start >= ft_strlen((char *)s))
+	if (!s)
 		return (NULL);
-	while (s[start + i] && i < (int) len)
-		i++;
-	str = malloc(sizeof(char) * i + 1);
+	i = 0;
+	if (start >= ft_strlen((char *)s))
+		return (ft_strdup(""));
+	if (len > (ft_strlen((char *) s) - start))
+		str = malloc(sizeof(char) * (ft_strlen((char *) s) - start + 1));
+	else
+		str = malloc(sizeof(char) * (len + 1));
 	if (!str)
 		return (NULL);
 	i = 0;
-	while (s[start + i] && i < (int) len)
+	while (s[start + i] && i < len)
 	{
 		str[i] = s[start + i];
 		i++;
